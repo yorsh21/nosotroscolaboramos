@@ -1,1 +1,16 @@
-{  }
+created:
+    - app/Http/Controllers/ProjectsController.php
+    - app/Http/Controllers/CategoryController.php
+    - database/factories/ProjectsFactory.php
+    - database/factories/CategoryFactory.php
+    - database/migrations/2020_09_09_042816_create_projects_table.php
+    - database/migrations/2020_09_09_042817_create_categories_table.php
+    - app/Projects.php
+    - app/Category.php
+    - tests/Feature/Http/Controllers/ProjectsControllerTest.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+updated:
+    - routes/web.php
+models:
+    Projects: { name: 'string unique', summary: 'string:400', description: longtext, score: integer, website: 'string nullable', social: 'string  nullable', status: integer, category_id: 'id foreign', user_id: 'id foreign' }
+    Category: { name: 'string unique', description: string, relationships: { hasMany: Projects } }

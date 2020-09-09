@@ -11,6 +11,7 @@ models:
         user_id: id foreign
     Category:
         name: string unique
+        description: string
         relationships:
             hasMany: Projects
 controllers:
