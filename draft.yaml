@@ -1,0 +1,21 @@
+models:
+    Projects:
+        name: string unique
+        summary: string:400
+        description: longtext
+        score: integer
+        website: string nullable
+        social: string  nullable
+        status: integer
+        category_id: id foreign
+        user_id: id foreign
+    Category:
+        name: string unique
+        relationships:
+            hasMany: Projects
+controllers:
+    Projects:
+        resource: all
+    Category:
+        resource: all
+
